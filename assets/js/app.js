@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const stepByStepContent = document.getElementById('step-by-step-content');
 
   // Pestañas
-  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabButtons = document.querySelectorAll('.tab-btn[data-target]');
   const tabPanels = document.querySelectorAll('.tab-panel');
 
   // Gestión de Pestañas
