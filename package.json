@@ -1,0 +1,19 @@
+{
+  "name": "actividad-mantenimiento-refactorizacion",
+  "version": "1.0.0",
+  "description": "Actividad de la Unidad #4: Mantenimiento y Refactorización de Software. Ingeniería de Software IX Semestre, Centro Tutorial de San Juan Nepomuceno.",
+  "main": "src/codigo_refactorizado.js",
+  "scripts": {
+    "test": "node --test tests/tests.js",
+    "start": "python -m http.server 8080"
+  },
+  "keywords": [
+    "mantenimiento-software",
+    "refactorizacion",
+    "clean-code",
+    "pruebas-unitarias",
+    "javascript"
+  ],
+  "author": "Felipe Alfonso Carmona, Ivan David Duran Stave, Juan David Cassiani",
+  "license": "MIT"
+}

@@ -1,0 +1,17 @@
+# Dependencias y logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Entorno y configuración del IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db

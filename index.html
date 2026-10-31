@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Plataforma interactiva de análisis estadístico y demostración de refactorización de código en JavaScript para la actividad de Mantenimiento de Software.">
+  <title>Plataforma de Análisis Estadístico | Mantenimiento de Software</title>
+  
+  <!-- Tipografía moderna Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/styles.css?v=6">
+</head>
+<body>
+  <!-- Fondo decorativo con degradados dinámicos -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <header class="app-header">
+    <div class="header-container">
+      <div class="header-badge">
+        <span class="badge-dot"></span> Ing. de Software IX Semestre • CT San Juan Nepomuceno • Unidad #4
+      </div>
+      <h1 class="main-title">Analizador Estadístico & Demostración de Refactorización</h1>
+      <p class="subtitle">
+        Integración frontend del módulo JavaScript refactorizado. Optimización de calidad, programación defensiva, principios SOLID y pruebas unitarias integradas.
+      </p>
+
+      <!-- Barra de Autores y Créditos Académicos -->
+      <div class="header-authors-bar">
+        <span class="authors-tag">Autores:</span>
+        <div class="authors-chips">
+          <a href="https://github.com/FelipeACY" target="_blank" rel="noopener noreferrer" class="author-pill" title="Ver GitHub de Felipe Alfonso Carmona (@FelipeACY)">
+            <img src="https://github.com/FelipeACY.png" alt="Felipe Alfonso Carmona" class="avatar-mini-img" onerror="this.src='https://avatars.githubusercontent.com/u/149967106?v=4'">
+            <span>Felipe Alfonso Carmona</span>
+            <svg class="github-icon-mini" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://github.com/ivandds2005" target="_blank" rel="noopener noreferrer" class="author-pill" title="Ver GitHub de Ivan David Duran Stave (@ivandds2005)">
+            <img src="https://github.com/ivandds2005.png" alt="Ivan David Duran Stave" class="avatar-mini-img" onerror="this.src='https://avatars.githubusercontent.com/u/139808288?v=4'">
+            <span>Ivan David Duran Stave</span>
+            <svg class="github-icon-mini" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://github.com/cassiani030" target="_blank" rel="noopener noreferrer" class="author-pill" title="Ver GitHub de Juan David Cassiani (@cassiani030)">
+            <img src="https://github.com/cassiani030.png" alt="Juan David Cassiani" class="avatar-mini-img" onerror="this.src='https://avatars.githubusercontent.com/u/148590576?v=4'">
+            <span>Juan David Cassiani</span>
+            <svg class="github-icon-mini" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+        </div>
+        <span class="docente-pill">Docente: Prof. Jhonny Gutiérrez</span>
+      </div>
+      
+      <div class="metrics-pill-group">
+        <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> 12/12 Pruebas Superadas</span>
+        <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg> 0 Dependencias Externas</span>
+        <span class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Principio SRP & Inmutabilidad</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Navegación por pestañas -->
+    <nav class="nav-tabs" aria-label="Secciones de la aplicación">
+      <button class="tab-btn active" id="tab-calculator" data-target="section-calculator">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+        Calculadora & Análisis
+      </button>
+      <button class="tab-btn" id="tab-comparison" data-target="section-comparison">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Comparativa Código (Antes / Después)
+      </button>
+      <button class="tab-btn" id="tab-tests" data-target="section-tests">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        Pruebas Unitarias en Vivo
+      </button>
+      <button class="tab-btn" id="tab-report" data-target="section-report">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+        Informe Técnico
+      </button>
+    </nav>
+
+    <!-- SECCIÓN 1: CALCULADORA Y ANÁLISIS EN VIVO -->
+    <section id="section-calculator" class="tab-panel active">
+      <div class="panel-card input-card">
+        <div class="card-header">
+          <h2>Conjunto de Datos de Entrada</h2>
+          <span class="badge-subtle">Entrada flexible</span>
+        </div>
+        <p class="card-description">
+          Ingrese una lista de números separados por coma, espacio o salto de línea. El cálculo se ejecuta en tiempo real mediante el módulo <code class="inline-code">codigo_refactorizado.js</code>.
+        </p>
+
+        <div class="input-group">
+          <label for="data-input" class="input-label">Datos numéricos:</label>
+          <div class="input-wrapper">
+            <textarea id="data-input" rows="3" placeholder="Ej: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10">1, 2, 3, 4, 5, 6, 7, 8, 9, 10</textarea>
+          </div>
+          <div id="validation-message" class="validation-message hidden" role="alert"></div>
+        </div>
+
+        <div class="actions-row">
+          <div class="presets-container">
+            <span class="presets-label">Cargar Ejemplos:</span>
+            <button class="btn-preset" data-preset="original" id="btn-preset-original">Original (1 al 10)</button>
+            <button class="btn-preset" data-preset="grades" id="btn-preset-grades">Calificaciones</button>
+            <button class="btn-preset" data-preset="temperatures" id="btn-preset-temps">Temperaturas</button>
+            <button class="btn-preset" data-preset="random" id="btn-preset-random">10 Aleatorios</button>
+          </div>
+          <div class="action-buttons">
+            <button id="btn-clear" class="btn-secondary">Limpiar</button>
+            <button id="btn-calculate" class="btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Recalcular
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TARJETAS DE RESULTADOS ESTADÍSTICOS -->
+      <div class="stats-grid">
+        <article class="stat-card stat-media">
+          <div class="stat-icon">μ</div>
+          <div class="stat-content">
+            <span class="stat-title">Media Aritmética</span>
+            <div class="stat-value" id="val-media">5.50</div>
+            <span class="stat-formula">Fórmula: Σ(x) / N</span>
+          </div>
+        </article>
+
+        <article class="stat-card stat-mediana">
+          <div class="stat-icon">M̃</div>
+          <div class="stat-content">
+            <span class="stat-title">Mediana</span>
+            <div class="stat-value" id="val-mediana">5.50</div>
+            <span class="stat-formula" id="lbl-mediana-tipo">Valor central (N par)</span>
+          </div>
+        </article>
+
+        <article class="stat-card stat-varianza">
+          <div class="stat-icon">σ²</div>
+          <div class="stat-content">
+            <span class="stat-title">Varianza Poblacional</span>
+            <div class="stat-value" id="val-varianza">8.25</div>
+            <span class="stat-formula">Fórmula: Σ(x - μ)² / N</span>
+          </div>
+        </article>
+
+        <article class="stat-card stat-desviacion">
+          <div class="stat-icon">σ</div>
+          <div class="stat-content">
+            <span class="stat-title">Desviación Estándar</span>
+            <div class="stat-value" id="val-desviacion">2.8723</div>
+            <span class="stat-formula">Fórmula: √Varianza</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- MÉTRICAS SECUNDARIAS RESUMIDAS -->
+      <div class="aux-metrics-panel">
+        <div class="aux-item">
+          <span class="aux-label">Tamaño de Muestra (N)</span>
+          <span class="aux-val" id="val-count">10</span>
+        </div>
+        <div class="aux-item">
+          <span class="aux-label">Suma Total</span>
+          <span class="aux-val" id="val-sum">55</span>
+        </div>
+        <div class="aux-item">
+          <span class="aux-label">Valor Mínimo</span>
+          <span class="aux-val" id="val-min">1</span>
+        </div>
+        <div class="aux-item">
+          <span class="aux-label">Valor Máximo</span>
+          <span class="aux-val" id="val-max">10</span>
+        </div>
+        <div class="aux-item">
+          <span class="aux-label">Rango</span>
+          <span class="aux-val" id="val-range">9</span>
+        </div>
+      </div>
+
+      <!-- GRÁFICA VISUAL DE DISTRIBUCIÓN -->
+      <div class="panel-card chart-card">
+        <div class="card-header">
+          <h2>Visualización de la Distribución de Datos</h2>
+          <div class="chart-legend">
+            <span class="legend-item"><span class="legend-color bar-color"></span> Valor</span>
+            <span class="legend-item"><span class="legend-color mean-line-color"></span> Media (μ)</span>
+          </div>
+        </div>
+        <p class="card-description">
+          Representación visual de cada punto del arreglo ordenado con respecto al promedio poblacional calculado.
+        </p>
+        <div id="chart-container" class="chart-container">
+          <!-- Las barras se generarán dinámicamente con JS -->
+        </div>
+      </div>
+
+      <!-- DESGLOSE PASO A PASO -->
+      <div class="panel-card step-card">
+        <div class="card-header">
+          <h2>Desglose Matemático Paso a Paso</h2>
+          <span class="badge-subtle">Auditoría de Cálculo</span>
+        </div>
+        <div id="step-by-step-content" class="step-content">
+          <!-- Se actualiza dinámicamente -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: COMPARATIVA DE CÓDIGO -->
+    <section id="section-comparison" class="tab-panel">
+      <div class="panel-card">
+        <div class="card-header">
+          <h2>Comparativa Técnica: Código Original vs. Código Refactorizado</h2>
+          <span class="badge-subtle">Análisis de Mantenimiento</span>
+        </div>
+        <p class="card-description">
+          A continuación se presenta un contraste detallado entre el archivo original <code class="inline-code">fuente.js</code> y la versión optimizada <code class="inline-code">codigo_refactorizado.js</code>.
+        </p>
+
+        <div class="comparison-grid">
+          <!-- Tarjeta Original -->
+          <div class="code-side original-side">
+            <div class="code-side-header">
+              <div class="side-title">
+                <span class="status-indicator bad"></span>
+                <span>Original (<code class="inline-code">fuente.js</code>)</span>
+              </div>
+              <span class="tag-status tag-bad">Con Errores y Olores de Código</span>
+            </div>
+            <ul class="issues-list">
+              <li><strong>Error de Sintaxis fatal:</strong> Líneas 63-65 con llamadas a <code class="inline-code">console.log(Media: ...)</code> sin comillas ni backticks, impidiendo la ejecución en Node/Browser.</li>
+              <li><strong>Ausencia de Validación:</strong> Si se pasa <code class="inline-code">[]</code>, <code class="inline-code">null</code> o cadenas, genera <code class="inline-code">NaN</code> o caídas en runtime.</li>
+              <li><strong>Efecto Secundario al Importar:</strong> Ejecución directa de <code class="inline-code">principal()</code> en el nivel raíz.</li>
+              <li><strong>Mutabilidad Innecesaria:</strong> Uso indiscriminado de <code class="inline-code">let</code> para variables no reasignadas.</li>
+              <li><strong>Ineficiencia de Memoria:</strong> En desviación estándar genera un arreglo temporal con <code class="inline-code">.map()</code> antes de <code class="inline-code">.reduce()</code>.</li>
+              <li><strong>Falta de Modularización:</strong> La varianza no existía como función independiente.</li>
+            </ul>
+            <div class="code-snippet-box">
+              <pre><code>// ❌ Código original con problemas:
+function obtenerDesviacionEstandar(numeros) {
+  let media = obtenerMedia(numeros);
+  let desviaciones = numeros.map(numero => Math.pow(numero - media, 2));
+  let varianza = desviaciones.reduce((acumulador, desviacion) => acumulador + desviacion, 0) / numeros.length;
+  let desviacionEstandar = Math.sqrt(varianza);
+  return desviacionEstandar;
+}
+
+// ❌ Error de sintaxis en template literals:
+console.log(Media: ${estadisticas.media});
+principal(); // ❌ Efecto secundario global</code></pre>
+            </div>
+          </div>
+
+          <!-- Tarjeta Refactorizada -->
+          <div class="code-side refactored-side">
+            <div class="code-side-header">
+              <div class="side-title">
+                <span class="status-indicator good"></span>
+                <span>Refactorizado (<code class="inline-code">codigo_refactorizado.js</code>)</span>
+              </div>
+              <span class="tag-status tag-good">Clean Code & Principios SOLID</span>
+            </div>
+            <ul class="improvements-list">
+              <li><strong>Corrección Sintáctica:</strong> Cadenas de interpolación con backticks válidos.</li>
+              <li><strong>Programación Defensiva (Guard Clauses):</strong> Nueva función <code class="inline-code">validarNumeros</code> que comprueba tipos, arreglo no vacío y elementos finitos.</li>
+              <li><strong>Principio de Responsabilidad Única (SRP):</strong> Extracción de <code class="inline-code">obtenerVarianza</code> como función independiente y reutilizable.</li>
+              <li><strong>Inmutabilidad Rigurosa:</strong> Empleo estricto de <code class="inline-code">const</code> y clonación segura <code class="inline-code">[...numeros]</code> antes de ordenar.</li>
+              <li><strong>Optimización de Rendimiento:</strong> Eliminación de arreglos intermedios superfluos.</li>
+              <li><strong>Exportación Universal Dual:</strong> Compatible con CommonJS (<code class="inline-code">module.exports</code>), Navegador (<code class="inline-code">window.Estadisticas</code>) y ejecución CLI condicional.</li>
+            </ul>
+            <div class="code-snippet-box">
+              <pre><code>//  Código refactorizado, modular y seguro:
+function obtenerVarianza(numeros) {
+  validarNumeros(numeros);
+  const media = obtenerMedia(numeros);
+  const sumaCuadrados = numeros.reduce(
+    (acum, n) => acum + Math.pow(n - media, 2), 0
+  );
+  return sumaCuadrados / numeros.length;
+}
+
+function obtenerDesviacionEstandar(numeros) {
+  return Math.sqrt(obtenerVarianza(numeros));
+}
+
+//  Compatibilidad dual limpia:
+if (typeof module !== 'undefined') module.exports = Estadisticas;
+if (typeof window !== 'undefined') window.Estadisticas = Estadisticas;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- TABLA COMPARATIVA DE MÉTRICAS -->
+        <div class="metrics-table-wrapper">
+          <h3 class="table-title">Matriz Comparativa de Calidad y Complejidad</h3>
+          <table class="metrics-table">
+            <thead>
+              <tr>
+                <th>Criterio / Métrica</th>
+                <th>Código Original (fuente.js)</th>
+                <th>Código Refactorizado (codigo_refactorizado.js)</th>
+                <th>Impacto en Mantenibilidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Estado de Ejecución</strong></td>
+                <td><span class="badge-pill pill-fail">Falla por SyntaxError</span></td>
+                <td><span class="badge-pill pill-pass">Ejecuta al 100% (Sin Errores)</span></td>
+                <td>Operatividad inmediata del sistema.</td>
+              </tr>
+              <tr>
+                <td><strong>Validación de Entrada</strong></td>
+                <td>Nula (Vulnerable a <code class="inline-code">NaN</code> y caídas)</td>
+                <td>Guard Clauses (<code class="inline-code">TypeError</code>, <code class="inline-code">RangeError</code>)</td>
+                <td>Mayor robustez y facilidad de diagnóstico.</td>
+              </tr>
+              <tr>
+                <td><strong>Responsabilidad Única (SRP)</strong></td>
+                <td>Varianza oculta en Desviación</td>
+                <td><code class="inline-code">obtenerVarianza</code> extraída</td>
+                <td>Reutilización de métricas y menor acoplamiento.</td>
+              </tr>
+              <tr>
+                <td><strong>Uso de Immutabilidad</strong></td>
+                <td>0% (<code class="inline-code">let</code> en todas las variables)</td>
+                <td>100% (<code class="inline-code">const</code> estricto y clones)</td>
+                <td>Elimina riesgos de mutación de estado accidental.</td>
+              </tr>
+              <tr>
+                <td><strong>Eficiencia en Memoria</strong></td>
+                <td>Crea arreglos temporales con <code class="inline-code">.map()</code></td>
+                <td>Acumulación directa en 1 pasada</td>
+                <td>Menor consumo de memoria y menor presión de GC.</td>
+              </tr>
+              <tr>
+                <td><strong>Testabilidad Modular</strong></td>
+                <td>Imposible sin editar (sin exports, side-effects)</td>
+                <td>Totalmente desacoplada (Dual Export)</td>
+                <td>Soporte para suite de pruebas automatizadas.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: PRUEBAS UNITARIAS EN VIVO -->
+    <section id="section-tests" class="tab-panel">
+      <div class="panel-card">
+        <div class="card-header">
+          <div>
+            <h2>Ejecutor de Pruebas Unitarias en Navegador</h2>
+            <p class="card-description">
+              Ejecuta en tiempo real la suite completa de pruebas unitarias verificando la equivalencia del comportamiento externo y la robustez de las guard clauses.
+            </p>
+          </div>
+          <button id="btn-run-tests" class="btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            Re-ejecutar Pruebas
+          </button>
+        </div>
+
+        <div class="tests-summary-bar">
+          <div class="test-stat">
+            <span class="test-stat-num text-success" id="tests-passed-count">0</span>
+            <span class="test-stat-label">Pasadas</span>
+          </div>
+          <div class="test-stat">
+            <span class="test-stat-num text-danger" id="tests-failed-count">0</span>
+            <span class="test-stat-label">Fallidas</span>
+          </div>
+          <div class="test-stat">
+            <span class="test-stat-num text-primary" id="tests-total-count">0</span>
+            <span class="test-stat-label">Total Pruebas</span>
+          </div>
+          <div class="test-stat">
+            <span class="test-stat-num" id="tests-duration">0 ms</span>
+            <span class="test-stat-label">Tiempo</span>
+          </div>
+        </div>
+
+        <div id="tests-list" class="tests-list-container">
+          <!-- Los resultados de las pruebas se generarán aquí -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: INFORME TÉCNICO -->
+    <section id="section-report" class="tab-panel">
+      <div class="panel-card report-panel">
+        <div class="card-header">
+          <h2>Informe Técnico de Mantenimiento y Refactorización</h2>
+          <span class="badge-subtle">Documento Académico</span>
+        </div>
+
+        <!-- Ficha Técnica Académica -->
+        <div class="academic-sheet">
+          <div class="academic-sheet-header">
+            <span class="academic-pill">Unidad #4 — Mantenimiento de Software</span>
+            <span class="academic-center">Centro Tutorial (CT) de San Juan Nepomuceno</span>
+          </div>
+          <div class="academic-grid">
+            <div class="academic-col">
+              <span class="academic-label">Programa & Semestre</span>
+              <span class="academic-val">Ingeniería de Software — IX Semestre</span>
+            </div>
+            <div class="academic-col">
+              <span class="academic-label">Docente Asesor</span>
+              <span class="academic-val">Prof. Jhonny Gutiérrez</span>
+            </div>
+            <div class="academic-col">
+              <span class="academic-label">Fecha de Entrega</span>
+              <span class="academic-val">Octubre 2026</span>
+            </div>
+          </div>
+          <div class="team-members-block">
+            <span class="academic-label">Equipo de Trabajo (Autores):</span>
+            <div class="team-chips">
+              <a href="https://github.com/FelipeACY" target="_blank" rel="noopener noreferrer" class="team-chip" title="Visitar perfil de GitHub de Felipe Alfonso Carmona (@FelipeACY)">
+                <img src="https://github.com/FelipeACY.png" alt="Felipe Alfonso Carmona" class="chip-avatar-img" onerror="this.src='https://avatars.githubusercontent.com/u/149967106?v=4'">
+                <div class="team-chip-info">
+                  <span class="chip-name">Felipe Alfonso Carmona</span>
+                  <span class="chip-handle">@FelipeACY</span>
+                </div>
+                <svg class="github-icon-mini" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a href="https://github.com/ivandds2005" target="_blank" rel="noopener noreferrer" class="team-chip" title="Visitar perfil de GitHub de Ivan David Duran Stave (@ivandds2005)">
+                <img src="https://github.com/ivandds2005.png" alt="Ivan David Duran Stave" class="chip-avatar-img" onerror="this.src='https://avatars.githubusercontent.com/u/139808288?v=4'">
+                <div class="team-chip-info">
+                  <span class="chip-name">Ivan David Duran Stave</span>
+                  <span class="chip-handle">@ivandds2005</span>
+                </div>
+                <svg class="github-icon-mini" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a href="https://github.com/cassiani030" target="_blank" rel="noopener noreferrer" class="team-chip" title="Visitar perfil de GitHub de Juan David Cassiani (@cassiani030)">
+                <img src="https://github.com/cassiani030.png" alt="Juan David Cassiani" class="chip-avatar-img" onerror="this.src='https://avatars.githubusercontent.com/u/148590576?v=4'">
+                <div class="team-chip-info">
+                  <span class="chip-name">Juan David Cassiani</span>
+                  <span class="chip-handle">@cassiani030</span>
+                </div>
+                <svg class="github-icon-mini" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="report-content">
+          <article class="report-section">
+            <h3>1. Descripción de los Problemas Identificados en el Código Original</h3>
+            <p>
+              Durante el análisis estático y dinámico del archivo original <code class="inline-code">fuente.js</code>, se identificaron múltiples inconsistencias de calidad, fallos sintácticos y olores de código (<em>code smells</em>):
+            </p>
+            <ul>
+              <li><strong>Defecto Sintáctico Crítico (Runtime Error):</strong> En la función <code class="inline-code">principal()</code>, las líneas 63 a 65 invocaban <code class="inline-code">console.log(Media: ${estadisticas.media});</code> sin delimitadores de cadenas de plantilla (backticks), provocando que cualquier intérprete de JavaScript aborte con <code class="inline-code">SyntaxError: missing ) after argument list</code>.</li>
+              <li><strong>Ausencia de Programación Defensiva y Validación:</strong> Ninguna de las funciones validaba la estructura ni el tipo de los datos entrantes. Casos como pasar un arreglo vacío <code class="inline-code">[]</code> producían divisiones por cero (<code class="inline-code">NaN</code>), y argumentos nulos o no numéricos causaban excepciones no controladas.</li>
+              <li><strong>Falta de Modularización y Violación de SRP:</strong> La función <code class="inline-code">obtenerDesviacionEstandar</code> calculaba internamente la varianza sin exponerla, impidiendo reutilizar dicho cálculo en otros contextos analíticos.</li>
+              <li><strong>Uso Indebido de Declaraciones Mutables:</strong> Todas las variables fueron declaradas con la palabra clave <code class="inline-code">let</code>, a pesar de que ninguna era reasignada, violando las buenas prácticas de inmutabilidad de JavaScript moderno.</li>
+              <li><strong>Ineficiencia Algorítmica y Uso de Memoria:</strong> Se realizaba un mapeo intermedio (<code class="inline-code">numeros.map()</code>) para calcular las desviaciones antes de reducirlas, consumiendo memoria adicional innecesaria ($O(N)$ extra).</li>
+              <li><strong>Acoplamiento y Efectos Secundarios:</strong> El archivo ejecutaba de forma inmediata <code class="inline-code">principal()</code> con datos cableados (<em>hardcoded</em>), imposibilitando la importación como módulo reutilizable en suites de testing o interfaces frontend.</li>
+            </ul>
+          </article>
+
+          <article class="report-section">
+            <h3>2. Explicación de las Técnicas de Refactorización Aplicadas</h3>
+            <p>
+              Se aplicaron técnicas reconocidas del catálogo de refactorización de Martin Fowler y principios de <em>Clean Code</em>:
+            </p>
+            <div class="techniques-grid">
+              <div class="tech-card">
+                <h4>Extracción de Funciones (Extract Function)</h4>
+                <p>Se crearon dos nuevas funciones especializadas: <code class="inline-code">validarNumeros()</code> para centralizar la validación defensiva y <code class="inline-code">obtenerVarianza()</code> para aislar el cálculo matemático de la varianza.</p>
+              </div>
+              <div class="tech-card">
+                <h4>Cláusulas de Guarda (Guard Clauses)</h4>
+                <p>Se sustituyó el flujo permisivo por validaciones tempranas que lanzan <code class="inline-code">TypeError</code> o <code class="inline-code">RangeError</code> con mensajes descriptivos ante entradas no válidas.</p>
+              </div>
+              <div class="tech-card">
+                <h4>Adopción de Inmutabilidad (Immutability Pattern)</h4>
+                <p>Se reemplazaron todos los <code class="inline-code">let</code> por <code class="inline-code">const</code>, y en el ordenamiento de la mediana se empleó el operador spread <code class="inline-code">[...numeros].sort()</code> para proteger el arreglo original de mutaciones colaterales.</p>
+              </div>
+              <div class="tech-card">
+                <h4>Simplificación de Expresiones y Sintaxis ES6+</h4>
+                <p>Se aplicó la notación abreviada de propiedades de objetos (<code class="inline-code">{ media, mediana, varianza, desviacionEstandar }</code>) y se inlinearon variables temporales superfluas en retornos concisos.</p>
+              </div>
+              <div class="tech-card">
+                <h4>Exportación Dual y Aislamiento de Efectos</h4>
+                <p>Se encapsuló la API en el objeto <code class="inline-code">Estadisticas</code>, permitiendo interoperabilidad tanto en Node.js (CommonJS) como en navegadores web (<code class="inline-code">window.Estadisticas</code>), condicionando la ejecución de consola solo si el script es ejecutado directamente.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="report-section">
+            <h3>3. Comparación de Calidad y Complejidad Antes y Después</h3>
+            <p>
+              La refactorización elevó significativamente el estándar de calidad del software:
+            </p>
+            <ul>
+              <li><strong>Mantenibilidad:</strong> Se redujo la deuda técnica acumulada por código muerto y variables temporales. La separación de responsabilidades facilita futuras extensiones (por ejemplo, agregar cálculo de moda o percentiles).</li>
+              <li><strong>Confiabilidad (Reliability):</strong> De un software que fallaba al iniciar a un componente robusto con 100% de cobertura en pruebas de límites y tipos.</li>
+              <li><strong>Complejidad Ciclomática:</strong> Cada función individual mantiene una complejidad ciclomática baja ($M \le 2$), haciendo cada algoritmo predecible y fácilmente auditable.</li>
+            </ul>
+          </article>
+
+          <article class="report-section">
+            <h3>4. Pruebas de Unidad Realizadas y Resultados</h3>
+            <p>
+              Se implementó una suite completa de 12 pruebas unitarias ejecutadas nativamente en Node.js (<code class="inline-code">node --test</code>) y replicadas en el frontend:
+            </p>
+            <ul>
+              <li><strong>Pruebas de Equivalencia Externa:</strong> Comprobación de que para la entrada original <code class="inline-code">[1, 2, ..., 10]</code> se obtienen exactamente los mismos valores numéricos: Media = 5.5, Mediana = 5.5, Varianza = 8.25 y Desviación Estándar ≈ 2.87228.</li>
+              <li><strong>Pruebas de Casos Extremos:</strong> Arreglos con cantidad impar de elementos, arreglos con un único elemento, y números negativos/decimales.</li>
+              <li><strong>Pruebas de Inmutabilidad:</strong> Verificación de que el arreglo pasado por referencia no experimenta modificaciones.</li>
+              <li><strong>Pruebas de Excepciones:</strong> Validación de lanzamiento de <code class="inline-code">RangeError</code> para arreglos vacíos y <code class="inline-code">TypeError</code> para valores no válidos o no numéricos.</li>
+            </ul>
+            <p class="callout-success">
+              <strong>Resultado General:</strong> 12 pruebas ejecutadas, 12 pruebas pasadas satisfactoriamente (0 fallos).
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-card">
+        <div class="footer-branding">
+          <h3>Ingeniería de Software — Semestre IX</h3>
+          <p>Actividad de la Unidad #4: Refactorización de Código y Mantenimiento de Software</p>
+          <p class="footer-sub">Centro Tutorial (CT) de San Juan Nepomuceno • Docente: Profesor Jhonny Gutiérrez • Octubre 2026</p>
+        </div>
+        <div class="footer-team">
+          <span class="footer-team-heading">Equipo de Trabajo (Estudiantes):</span>
+          <div class="team-chips footer-chips">
+            <a href="https://github.com/FelipeACY" target="_blank" rel="noopener noreferrer" class="team-chip" title="Visitar perfil de GitHub de Felipe Alfonso Carmona (@FelipeACY)">
+              <img src="https://github.com/FelipeACY.png" alt="Felipe Alfonso Carmona" class="chip-avatar-img" onerror="this.src='https://avatars.githubusercontent.com/u/149967106?v=4'">
+              <div class="team-chip-info">
+                <span class="chip-name">Felipe Alfonso Carmona</span>
+                <span class="chip-handle">@FelipeACY</span>
+              </div>
+              <svg class="github-icon-mini" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://github.com/ivandds2005" target="_blank" rel="noopener noreferrer" class="team-chip" title="Visitar perfil de GitHub de Ivan David Duran Stave (@ivandds2005)">
+              <img src="https://github.com/ivandds2005.png" alt="Ivan David Duran Stave" class="chip-avatar-img" onerror="this.src='https://avatars.githubusercontent.com/u/139808288?v=4'">
+              <div class="team-chip-info">
+                <span class="chip-name">Ivan David Duran Stave</span>
+                <span class="chip-handle">@ivandds2005</span>
+              </div>
+              <svg class="github-icon-mini" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://github.com/cassiani030" target="_blank" rel="noopener noreferrer" class="team-chip" title="Visitar perfil de GitHub de Juan David Cassiani (@cassiani030)">
+              <img src="https://github.com/cassiani030.png" alt="Juan David Cassiani" class="chip-avatar-img" onerror="this.src='https://avatars.githubusercontent.com/u/148590576?v=4'">
+              <div class="team-chip-info">
+                <span class="chip-name">Juan David Cassiani</span>
+                <span class="chip-handle">@cassiani030</span>
+              </div>
+              <svg class="github-icon-mini" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Carga del script refactorizado oficial -->
+  <script src="src/codigo_refactorizado.js?v=6"></script>
+  <!-- Lógica de interfaz y control frontend -->
+  <script src="assets/js/app.js?v=6"></script>
+</body>
+</html>

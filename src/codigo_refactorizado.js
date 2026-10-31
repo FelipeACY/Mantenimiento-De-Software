@@ -1,0 +1,161 @@
+/**
+ * Módulo de Cálculo Estadístico Refactorizado
+ * 
+ * Asignatura: Mantenimiento de Software — Unidad #4
+ * Programa: Ingeniería de Software — IX Semestre
+ * Centro Tutorial (CT): San Juan Nepomuceno
+ * Docente: Profesor Jhonny Gutiérrez
+ * Fecha: Octubre 2026
+ * 
+ * Integrantes:
+ * - Felipe Alfonso Carmona (GitHub: https://github.com/FelipeACY)
+ * - Ivan David Duran Stave (GitHub: https://github.com/ivandds2005)
+ * - Juan David Cassiani (GitHub: https://github.com/cassiani030)
+ * 
+ * Principios de Mantenimiento de Software y Clean Code aplicados:
+ * - Corrección de errores sintácticos (interpolación de cadenas de texto).
+ * - Principio de Responsabilidad Única (SRP) y Modularidad.
+ * - Inmutabilidad (uso estricto de 'const' en lugar de 'let').
+ * - Programación defensiva con validación temprana (Guard Clauses).
+ * - Extracción de funciones (obtenerVarianza y validarNumeros).
+ * - Eliminación de variables temporales redundantes.
+ * - Sintaxis simplificada de objetos en ES6+.
+ * - Compatibilidad universal (Node.js CommonJS y Navegador Web).
+ */
+
+/**
+ * Valida que el parámetro recibido sea un arreglo no vacío de números finitos.
+ * @param {number[]} numeros - Arreglo a validar.
+ * @throws {TypeError} Si el argumento no es un arreglo o contiene elementos no numéricos.
+ * @throws {RangeError} Si el arreglo está vacío.
+ */
+function validarNumeros(numeros) {
+  if (!Array.isArray(numeros)) {
+    throw new TypeError('El argumento debe ser un arreglo de números.');
+  }
+  if (numeros.length === 0) {
+    throw new RangeError('El arreglo no puede estar vacío.');
+  }
+  const tieneNoNumericos = numeros.some(n => typeof n !== 'number' || !Number.isFinite(n));
+  if (tieneNoNumericos) {
+    throw new TypeError('Todos los elementos del arreglo deben ser números válidos y finitos.');
+  }
+}
+
+/**
+ * Calcula la media aritmética de una lista de números.
+ * @param {number[]} numeros - Lista de números.
+ * @returns {number} Media aritmética.
+ */
+function obtenerMedia(numeros) {
+  validarNumeros(numeros);
+  const sumaTotal = numeros.reduce((acumulador, numero) => acumulador + numero, 0);
+  return sumaTotal / numeros.length;
+}
+
+/**
+ * Calcula la mediana de una lista de números sin mutar el arreglo original.
+ * @param {number[]} numeros - Lista de números.
+ * @returns {number} Mediana de la lista de números.
+ */
+function obtenerMediana(numeros) {
+  validarNumeros(numeros);
+  // Se crea una copia inmutable antes de ordenar
+  const numerosOrdenados = [...numeros].sort((a, b) => a - b);
+  const longitud = numerosOrdenados.length;
+  const mitad = Math.floor(longitud / 2);
+
+  return longitud % 2 === 0
+    ? (numerosOrdenados[mitad - 1] + numerosOrdenados[mitad]) / 2
+    : numerosOrdenados[mitad];
+}
+
+/**
+ * Calcula la varianza poblacional de una lista de números.
+ * Extraída como sub-abstracción para cumplir con el Principio de Responsabilidad Única.
+ * @param {number[]} numeros - Lista de números.
+ * @returns {number} Varianza poblacional.
+ */
+function obtenerVarianza(numeros) {
+  validarNumeros(numeros);
+  const media = obtenerMedia(numeros);
+  const sumaDiferenciasAlCuadrado = numeros.reduce(
+    (acumulador, numero) => acumulador + Math.pow(numero - media, 2),
+    0
+  );
+  return sumaDiferenciasAlCuadrado / numeros.length;
+}
+
+/**
+ * Calcula la desviación estándar poblacional de una lista de números.
+ * @param {number[]} numeros - Lista de números.
+ * @returns {number} Desviación estándar.
+ */
+function obtenerDesviacionEstandar(numeros) {
+  return Math.sqrt(obtenerVarianza(numeros));
+}
+
+/**
+ * Calcula las estadísticas descriptivas principales de una lista de números.
+ * @param {number[]} numeros - Lista de números.
+ * @returns {{ media: number, mediana: number, varianza: number, desviacionEstandar: number }} Estadísticas calculadas.
+ */
+function obtenerEstadisticas(numeros) {
+  validarNumeros(numeros);
+  const media = obtenerMedia(numeros);
+  const mediana = obtenerMediana(numeros);
+  const varianza = obtenerVarianza(numeros);
+  const desviacionEstandar = obtenerDesviacionEstandar(numeros);
+
+  return {
+    media,
+    mediana,
+    varianza,
+    desviacionEstandar
+  };
+}
+
+/**
+ * Función principal que orquesta el cálculo e impresión de estadísticas.
+ * Permite recibir parámetros opcionales para evitar acoplamiento rígido.
+ * @param {number[]} [numeros=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]] - Conjunto de datos a procesar.
+ */
+function principal(numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
+  try {
+    const estadisticas = obtenerEstadisticas(numeros);
+    console.log(`Media: ${estadisticas.media}`);
+    console.log(`Mediana: ${estadisticas.mediana}`);
+    console.log(`Varianza: ${estadisticas.varianza}`);
+    console.log(`Desviación estándar: ${estadisticas.desviacionEstandar}`);
+    return estadisticas;
+  } catch (error) {
+    console.error(`Error al procesar estadísticas: ${error.message}`);
+    throw error;
+  }
+}
+
+// Objeto contenedor para exportación modular limpia
+const Estadisticas = {
+  validarNumeros,
+  obtenerMedia,
+  obtenerMediana,
+  obtenerVarianza,
+  obtenerDesviacionEstandar,
+  obtenerEstadisticas,
+  principal
+};
+
+// Soporte para entorno Node.js / CommonJS
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = Estadisticas;
+}
+
+// Soporte para entorno de navegador
+if (typeof window !== 'undefined') {
+  window.Estadisticas = Estadisticas;
+}
+
+// Ejecución autónoma solo cuando se invoca directamente desde consola
+if (typeof require !== 'undefined' && require.main === module) {
+  principal();
+}
