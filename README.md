@@ -5,6 +5,7 @@
 > **Sede:** Centro Tutorial (CT) de San Juan Nepomuceno  
 > **Docente:** Profesor Jhonny Gutiérrez  
 > **Fecha:** Octubre 2026  
+> **Repositorio Oficial en GitHub:** [https://github.com/FelipeACY/Mantenimiento-De-Software](https://github.com/FelipeACY/Mantenimiento-De-Software)  
 
 ---
 
